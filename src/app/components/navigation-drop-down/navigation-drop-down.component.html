@@ -1,0 +1,25 @@
+<div class="container mt-1">
+    <div class="row mb-1">
+        <div class="col">
+            <label for="producTypes-dd" class="form-label">Navigation Name</label>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col">
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle w-100" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false" id="producTypes-dd">
+                    {{ selectedOption || 'Select an option' }}
+                </button>
+                <ul class="dropdown-menu">
+                    <li *ngFor="let option of items">
+                        <a class="dropdown-item" href="#" (click)="onItemSelected(option)">
+                            {{ option }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+ 

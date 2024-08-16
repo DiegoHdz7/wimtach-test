@@ -1,0 +1,7 @@
+<div *ngFor="let item of filteredProducts | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+    <app-product [product]="item" class="product-container" (click)="onProductClick(item)"    
+    (mouseenter)="onProductMouseEnter(item)"
+    (mouseleave)="onProductMouseLeave(item)"
+    [ngClass]="{'hovered': hoveredProduct === item}"></app-product>
+</div>
+

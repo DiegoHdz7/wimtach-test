@@ -1,0 +1,114 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">{{title}}</h3>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-{{inputSpacing}}">
+                    <label for="name" class="form-label">Name:</label>
+                    <input id="name" formControlName="name" class="form-control" />
+                    <div *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched" class="text-danger">
+                      <small *ngIf="productForm.get('name')?.errors?.['required']">Name is required.</small>
+                      <small *ngIf="productForm.get('name')?.errors?.['minlength']">Name must be at least 3 characters long.</small>
+                    </div>
+                  </div>
+      
+                  <div class="mb-{{inputSpacing}}">
+                    <label for="category" class="form-label">Category:</label>
+                    <input id="category" formControlName="category" class="form-control" />
+                    <div *ngIf="productForm.get('category')?.invalid && productForm.get('category')?.touched" class="text-danger">
+                      <small *ngIf="productForm.get('category')?.errors?.['required']">Category is required.</small>
+                    </div>
+                  </div>
+      
+                  <div class="mb-{{inputSpacing}}">
+                    <label for="price" class="form-label">Price:</label>
+                    <input id="price" formControlName="price" type="number" class="form-control" />
+                    <div *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched" class="text-danger">
+                      <small *ngIf="productForm.get('price')?.errors?.['required']">Price is required.</small>
+                      <small *ngIf="productForm.get('price')?.errors?.['min']">Price must be greater than or equal to 0.</small>
+                    </div>
+                  </div>
+
+                  <div class="mb-{{inputSpacing}}">
+                    <label for="description" class="form-label">Description:</label>
+                    <textarea id="description" formControlName="description" class="form-control"></textarea>
+                  </div>
+      
+
+                </div>
+                <!--Segunda columna-->
+                <div class="col-md-6">
+               
+      
+                  <div class="mb-{{inputSpacing}}">
+                    <label for="brand" class="form-label">Brand:</label>
+                    <input id="brand" formControlName="brand" class="form-control" />
+                    <div *ngIf="productForm.get('brand')?.invalid && productForm.get('brand')?.touched" class="text-danger">
+                      <small *ngIf="productForm.get('brand')?.errors?.['required']">Brand is required.</small>
+                    </div>
+                  </div>
+      
+                  <div class="mb-{{inputSpacing}}">
+                    <label for="rating" class="form-label">Rating (1-5):</label>
+                    <input id="rating" formControlName="rating" type="number" class="form-control" min="1" max="5" />
+                    <div *ngIf="productForm.get('rating')?.invalid && productForm.get('rating')?.touched" class="text-danger">
+                      <small *ngIf="productForm.get('rating')?.errors?.['required']">Rating is required.</small>
+                      <small *ngIf="productForm.get('rating')?.errors?.['min']">Rating must be at least 1.</small>
+                      <small *ngIf="productForm.get('rating')?.errors?.['max']">Rating cannot exceed 5.</small>
+                    </div>
+                  </div>
+      
+                  <div class="mb-{{inputSpacing}}">
+                    <label for="discount" class="form-label">Discount (%):</label>
+                    <input id="discount" formControlName="discount" type="number" class="form-control" min="0" />
+                    <div *ngIf="productForm.get('discount')?.invalid && productForm.get('discount')?.touched" class="text-danger">
+                      <small *ngIf="productForm.get('discount')?.errors?.['min']">Discount cannot be less than 0.</small>
+                      <small *ngIf="productForm.get('discount')?.errors?.['max']">Discount cannot exceed 100.</small>
+                    </div>
+                  </div>
+      
+                  <div class="mb-{{inputSpacing}}">
+                    <label for="releaseDate" class="form-label">Release Date:</label>
+                    <input id="releaseDate" formControlName="releaseDate" type="date" class="form-control" />
+                    <div *ngIf="productForm.get('releaseDate')?.invalid && productForm.get('releaseDate')?.touched" class="text-danger">
+                      <small *ngIf="productForm.get('releaseDate')?.errors?.['required']">Release Date is required.</small>
+                    </div>
+                  </div>
+      
+                 
+
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+
+                </div>
+                <div class="col-md-6 mb-{{inputSpacing}}">
+                  <div class="form-check">
+                    <input id="inStock" formControlName="inStock" type="checkbox" class="form-check-input" />
+                    <label for="inStock" class="form-check-label">In Stock</label>
+                  </div>
+                </div>
+              </div>
+              
+            
+             <div class="text-center mt-3">
+              <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid">Submit</button>
+
+             </div>
+  
+             
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

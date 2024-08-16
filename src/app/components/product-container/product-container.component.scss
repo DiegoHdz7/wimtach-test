@@ -1,0 +1,16 @@
+
+/* Default background color for product container */
+.product-container {
+    background-color: #fff; /* Default color */
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Background color when product is hovered */
+  .product-container.hovered {
+    background-color: #0c4661; /* Hover color */
+  }
+
+
+    
+  
+  

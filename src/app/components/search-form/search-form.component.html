@@ -1,0 +1,68 @@
+  <div class="container mt-4">
+    <form>
+        <!--Application Types-->
+        <div class="row mb-1">
+            <div class="col">
+                <label for="applicationTypes-dd" class="form-label">Category</label>
+            </div>
+        </div>
+        <div class="row mb-1">
+            <div class="col">
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle w-100" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false" id="applicationTypes-dd">
+                        {{ categorySelected || 'Select an option' }}
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li *ngFor="let option of categories">
+                            <a class="dropdown-item"  (click)="onCategorySelected(option)">
+                                {{ option }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--Product Types-->
+        <div class="row mb-1">
+            <div class="col">
+                <label for="producTypes-dd" class="form-label">Brand</label>
+            </div>
+        </div>
+        <div class="row mb-1">
+            <div class="col">
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle w-100" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false" id="producTypes-dd">
+                        {{ brandSelected || 'Select an option' }}
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li *ngFor="let option of brands">
+                            <a class="dropdown-item"  (click)="onBrandSelected(option)">
+                                {{ option }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--buttons-->
+        <div class="row my-3">
+            <div class="col-6">
+                <button type="button" class="btn btn-danger w-100" (click)="onSearch()">SEARCH</button>
+
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-secondary w-100" (click)="onReset()">RESET</button>
+
+            </div>
+           
+        </div>
+
+    
+    </form>
+</div>
+  
+  

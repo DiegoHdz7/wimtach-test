@@ -1,0 +1,43 @@
+<div class="container pt-2 border-top border-dark product">
+    <!-- Product list with pagination -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <h5>{{ product.name }}</h5>
+        </div>
+        <div class="col-md-6 d-flex justify-content-end align-items-center">
+          <label class="d-flex align-items-center mx-2">
+            <input type="checkbox" class="me-2" />
+            EMAIL
+          </label>
+          <button type="button" class="btn btn-danger mx-2" (click)="onDelete()">Delete</button>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <img src="assets/images/preassure_gauge.jpg" alt="Pressure Gauge" style="width: 150px; height: auto;">
+        </div>
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-6">
+              <p class="mb-1"><strong>Id: </strong>{{ product.id }}</p>
+              <p class="mb-1"><strong>Name: </strong>{{ product.name }}</p>
+              <p class="mb-1"><strong>Category: </strong>{{ product.category }}</p>
+              <p class="mb-1"><strong>Price: </strong>{{ product.price }}</p>
+              <p class="mb-1"><strong>In-stock: </strong>{{ product.inStock }}</p>
+            </div>
+            <div class="col-md-6">
+              <p class="mb-1"><strong>Brand: </strong>{{ product.brand }}</p>
+              <p class="mb-1"><strong>Rating: </strong>{{ product.rating }}</p>
+              <p class="mb-1"><strong>Discount: </strong>{{ product.discount }}</p>
+              <p class="mb-1"><strong>Release Date: </strong>{{ product.releaseDate }}</p>
+              <p class="mb-1"><strong>Description: </strong>{{ product.description }}</p>
+            </div>
+
+
+          </div>
+
+        </div>
+        
+      </div>
+   
+  </div>

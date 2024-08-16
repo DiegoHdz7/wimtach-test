@@ -1,0 +1,56 @@
+<div class="container mt-4">
+    <form [formGroup]="upcForm">
+
+        <!--Search by UPC-->
+        <div class="row mb-1">
+            <div class="col">
+                <label for="upc-text" class="form-label">SEARCH BY UPC</label>
+            </div>
+        </div>
+        <div class="row mb-1">
+            <div class="col">
+                <input type="text" class="form-control" id="upc-text" placeholder="Enter UPC here" formControlName="upcText">
+            </div>
+        </div>
+
+         <!--Search by part number-->
+         <div class="row mb-1">
+            <div class="col">
+                <label for="part-number" class="form-label">SEARCH BY PART NUMBER</label>
+            </div>
+        </div>
+        <div class="row mb-1">
+            <div class="col">
+                <input type="number" class="form-control" id="part-number" placeholder="Enter UPC here" formControlName="upcText">
+            </div>
+        </div>
+        <div *ngFor="let i of [].constructor(navComponentSize); let idx = index">
+            <app-navigation-drop-down [items]="navigations" (selectionChanged)="handleSelectedNav($event)"></app-navigation-drop-down>
+
+        </div>
+
+         <!--buttons-->
+         <div class="row my-3">
+            <div class="col-6">
+                <button type="button" class="btn btn-danger w-100">SEARCH</button>
+
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-secondary w-100">RESET</button>
+
+            </div>
+           
+        </div>
+
+
+      
+
+
+        
+    
+    </form>
+
+</div>
+
+
+
